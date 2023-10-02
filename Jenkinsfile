@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        IMAGE_NAME = 'myscript'
-    }
-
     stages {
         stage('Build Docker Image') {
             steps {
@@ -13,11 +8,10 @@ pipeline {
                 }
             }
         }
-
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker run ${IMAGE_NAME}"
+                    sh '/usr/local/bin/docker run myscript'
                 }
             }
         }
