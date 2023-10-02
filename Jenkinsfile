@@ -11,7 +11,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh '/usr/local/bin/docker run myscript || exit 1'
+                    sh '/usr/local/bin/docker run docker.io/library/myscript || exit 1'
                 }
             }
         }
